@@ -43,8 +43,12 @@ def create_record(base_lst:list):
     service = input("Введите название сервиса/ссылку на сервис:")
 
     try:
+
+        
         len_pass = int(input("Введите длинну пароля:"))
     except ValueError:
+
+        
         print("Ошибка: введено не число.")
         print("Попробуйте в следующий раз вводить только цифры.")
         return None
@@ -55,42 +59,59 @@ def create_record(base_lst:list):
 
 
 def show_records(base_lst:list):
+
+    
     print("\nЗаписи:")
     print("="*10)
+
     if base_lst:
+
+        
         for rec in base_lst:
+
+            
             print(f"Юзернейм: {rec["Username"]}")
             print(f"Сервис: {rec["Service"]}")
             print(f"Пароль: {rec["Password"]}")
             print(f"Дата создания: {rec["CreatedAt"]}")
             print("="*10)
     else:
+
+        
         print("Список записей пуст.")
 
 
 def delete_record(base_lst: list):
+
+    
     if base_lst:
+
+        
         need_name = input("Введите юзернейм:")
 
         for rec in base_lst:
             if rec["Username"] == need_name:
 
+                
                 question = "Вы уверены, что хотите удалить запись(Д/Н): "
                 choice = input(question).lower()
 
 
                 if choice == "д" or choice == "l":
 
+                    
                     base_lst.remove(rec)
+
                     
                     print("Запись удалена!")
                     return None
 
                 else:
 
+                    
                     print("Отмена удаления...")
                     return None
-                
+
         else:
             print(f"Запись с юзером {need_name} отсутствует в базе данных.")
             print("Попробуйте другой юзерней.")
@@ -103,11 +124,16 @@ def delete_record(base_lst: list):
 
 def load_from_json_file(URL):
 
+    
     try:
+
+        
         with open(URL, "r", encoding="UTF-8") as file:
             data = json.load(file)
 
+        
         return data
+
     
     except FileNotFoundError:
 
@@ -120,9 +146,10 @@ def load_from_json_file(URL):
 
 def record_to_file(URL, base_lst):
 
+    
     with open(URL, "w", encoding="UTF-8") as file:
 
-
+        
         json.dump(base_lst, file, ensure_ascii=False, indent=4)
 
 
