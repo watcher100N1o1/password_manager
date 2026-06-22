@@ -19,6 +19,7 @@ def show_menu():
     print("5 - прочитать файл")
     print("6 - выход")
 
+
 def show_records(base_lst:list):
     """**Функц*ия-витрина**
     
