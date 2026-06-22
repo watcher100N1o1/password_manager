@@ -198,9 +198,13 @@ bash:
 
 # Архитектура:
 final_exam_project
-├── model/ # Модели данных (PasswordRecord и прочее)
+├──model/ # Модели данных (PasswordRecord и прочее)
+
 ├── view/ # Вывод в консоль
+
 ├── controller/ # Обработка команд
+
 ├── data.json # Файл с сохранёнными данными
+
 └── README.md # Этот файл
 
