@@ -374,7 +374,7 @@ bash:
 > Всего доброго!
 
 # Архитектура:
-final_exam_project
+password_manager
 
 ├──model/ # Модели данных (PasswordRecord и прочее)
 
