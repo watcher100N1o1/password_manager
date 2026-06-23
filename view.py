@@ -27,20 +27,37 @@ def show_records(base_lst:list):
     
     #Часть оформления
     print("\nЗаписи:")
-    print(f"({"="*10})")
+    print(f"({'='*10})")
 
     #Если вносимый список не пуст
     if base_lst:
 
-        #Проохожимся по списку
+        # Проохожимся по списку
         for rec in base_lst:
+            
+            #Если длинна словаря равна 4:
+            if len(rec) == 4:
+                
+                # Выводим информацию, хранящуюся в элементах
+                # (без записки). 
+                print(f"Юзернейм: {rec['Username']}")
+                print(f"Сервис: {rec['Service']}")
+                print(f"Пароль: {rec['Password']}")
+                print(f"Дата создания: {rec['CreatedAt']}")
+            
 
-            #Выводим информацию, хранящуюся в элементах 
-            print(f"Юзернейм: {rec["Username"]}")
-            print(f"Сервис: {rec["Service"]}")
-            print(f"Пароль: {rec["Password"]}")
-            print(f"Дата создания: {rec["CreatedAt"]}")
-            print(f"({"="*10})")
+            elif len(rec) == 5:
+
+                # Выводим информацию, хранящуюся в элементах 
+                # (с запиской) 
+                print(f"Юзернейм: {rec['Username']}")
+                print(f"Сервис: {rec['Service']}")
+                print(f"Пароль: {rec['Password']}")
+                print(f"Заметка: \n{rec['Note']}")
+                print(f"Дата создания: {rec['CreatedAt']}")
+
+            print(f"({'='*10})")
+
 
     #Иначе - выводим сообщение о пустом списке
     else:
